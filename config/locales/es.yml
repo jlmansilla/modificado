@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        email: "Correo electrónico"
+        password: "Contraseña"
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
