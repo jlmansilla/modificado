@@ -1,2 +1,32 @@
-<h1>Leads#index</h1>
-<p>Find me in app/views/leads/index.html.erb</p>
+<h1>Lista de Prospectos</h1>
+
+<table class = "table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>Estatus</th>
+      <th>Conversaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td><%= "#{lead.first_name} #{lead.last_name}" %></td>
+        <td><%= lead.email %></td>
+        <td><%= lead.phone %></td>
+        <td><%= lead.status %></td>
+        <td>
+          <ul>
+            <% lead.talks.each do |talk| %>
+              <li><%= talk.body %></li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Agregar Prospecto", new_lead_path %>

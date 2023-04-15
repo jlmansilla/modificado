@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do  
     get '/users/sign_out' => 'devise/sessions#destroy'     
   end
-  get 'leads/index'
-  get 'leads/new'
-  get 'leads/create'
-  get 'leads/edit'
-  get 'leads/update'
+  resources :leads
   resources :talks
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

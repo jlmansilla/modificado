@@ -15,10 +15,11 @@ User.create!(email: "usuario2@gmail.com", password: "281ABASD932", password_conf
     Lead.create([
       {
         email: Faker::Internet.email,
-        name: Faker::Name.first_name,
+        first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         phone: Faker::PhoneNumber.cell_phone_in_e164,
-        status: %w[prospecto interesado cliente][rand(3)],
-        user: User.all[rand(User.count)]
+        status: %w[prospecto interesado cliente][rand(0..2)],
+        
       }
     ])
+end    
